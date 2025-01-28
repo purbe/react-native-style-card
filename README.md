@@ -1,68 +1,105 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Style Card
 
-# Getting Started
+A React Native component that provides a customizable card interface for displaying content in a structured and visually appealing manner.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- Customizable card styles
+- Easy integration into React Native projects
+- Supports various content types within the card
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Prerequisites
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Ensure you have the following installed:
 
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [React Native CLI](https://reactnative.dev/docs/environment-setup)
+
+## Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/purbe/react-native-style-card.git
+   cd react-native-style-card
+2. Install Dependencies:
+    ```
+   npm install
+## Usage
+1. Import the Component:
+``` javascript
+import StyleCard from './components/StyleCard';
+```
+2. Use the Component:
+```
+const App = () => {
+  return (
+    <StyleCard
+      title="Card Title"
+      content="This is the content of the card."
+      style={{ backgroundColor: '#f8f9fa' }}
+    />
+  );
+};
+
+export default App;
+```
+## Props
+
+The `StyleCard` component accepts the following props:
+
+| Prop      | Type     | Default              | Description                          |
+|-----------|----------|----------------------|--------------------------------------|
+| `title`   | `string` | `undefined`          | The title displayed on the card.     |
+| `content` | `string` | `undefined`          | The main content of the card.        |
+| `style`   | `object` | `{}`                 | Custom styles for the card container.|
+| `onPress` | `func`   | `undefined`          | Callback function for card press.    |
+| `image`   | `string` | `undefined`          | Optional image URL to display in the card. |
+| `elevation`| `number`| `2`                  | Elevation/shadow for the card on Android. |
+| `borderRadius`| `number`| `8`              | Border radius of the card.           |
+
+### Example Usage
+
+Here’s an example using multiple props:
+
+```javascript
+import StyleCard from './components/StyleCard';
+
+const App = () => {
+  return (
+    <StyleCard
+      title="Welcome"
+      content="This is a beautiful card component."
+      style={{ backgroundColor: '#f8f9fa', padding: 16 }}
+      image="https://example.com/image.jpg"
+      onPress={() => alert('Card Pressed!')}
+      elevation={5}
+      borderRadius={12}
+    />
+  );
+};
+
+export default App;
+```
+## Running the Application
+To run the application on an emulator or physical device:
+
+Start the Metro Bundler:
 ```bash
-# using npm
 npm start
-
-# OR using Yarn
-yarn start
 ```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+Run on Android:
 ```bash
-# using npm
 npm run android
-
-# OR using Yarn
-yarn android
 ```
-
-### For iOS
-
+Run on iOS:
 ```bash
-# using npm
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
 ## Congratulations! :tada:
 
 You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
 # Troubleshooting
 
